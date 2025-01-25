@@ -265,11 +265,10 @@ body {
     display: flex;
     gap: 2rem;
     overflow-x: auto;
+    scroll-behavior: smooth;
     padding: 1rem 0.5rem;
     scroll-snap-type: x mandatory;
-    /* Firefox */
     scrollbar-width: none;
-    /* IE/Edge */
     -ms-overflow-style: none;
 }
 
@@ -281,6 +280,7 @@ body {
 .tips-section {
     padding: 5rem 2rem;
     background-color: var(--background-light);
+    position: relative;
 }
 
 .section-header {
@@ -302,9 +302,41 @@ body {
 }
 
 .tips-container {
+    position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 3rem;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--white);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+    z-index: 2;
+    transition: var(--transition);
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.carousel-button:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-button.prev {
+    left: 0;
+}
+
+.carousel-button.next {
+    right: 0;
 }
 
 .tips-section h2 {
@@ -313,14 +345,12 @@ body {
 }
 
 .tips-table {
+    margin-top: 1.5rem;
     width: 100%;
-    max-width: 800px;
-    margin-top: 1rem;
     border-collapse: collapse;
-    background-color: #ffffff;
-    border-radius: 10px;
+    border-radius: 0.5rem;
     overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-sm);
 }
 
 .tips-table th,
@@ -331,9 +361,54 @@ body {
 }
 
 .tips-table th {
-    color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--white);
     font-weight: 600;
     width: 40%;
+}
+
+.tip-footer {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.tip-expand {
+    background: none;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.tip-expand:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    opacity: 0.5;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.carousel-dot.active {
+    opacity: 1;
+    background: var(--primary-color);
+    transform: scale(1.2);
 }
 
 .tips-table td {
@@ -348,6 +423,8 @@ body {
     scroll-snap-align: start;
     box-shadow: var(--shadow-md);
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
 }
 
 .tip-card:hover {
@@ -363,9 +440,13 @@ body {
 }
 
 .tip-icon {
-    width: 64px;
-    height: 64px;
+    width: 80px;
+    height: 80px;
     margin: 0 auto 1.5rem;
+    padding: 1rem;
+    background: var(--background-light);
+    border-radius: 50%;
+    transition: var(--transition);
 }
 
 .tip-icon img {
@@ -418,7 +499,7 @@ body {
     }
 
     .tip-card {
-        min-width: 280px;
+        min-width: 260px;
         padding: 1.5rem;
     }
 
@@ -427,8 +508,8 @@ body {
     }
 
     .tip-icon {
-        width: 48px;
-        height: 48px;
+        width: 60px;
+        height: 60px;
     }
 
     .nav-container {
@@ -468,6 +549,17 @@ body {
         width: 60px;
         height: 60px;
     }
+
+    .tips-container {
+        padding: 0 2rem;
+    }
+
+    .carousel-button {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -476,5 +568,18 @@ body {
     .tips-table td {
         padding: 0.75rem;
         font-size: 0.9rem;
+    }
+
+    .tips-container {
+        padding: 0 1rem;
+    }
+
+    .carousel-button {
+        display: none;
+    }
+
+    .tip-card {
+        min-width: 240px;
+        padding: 1rem;
     }
 }
