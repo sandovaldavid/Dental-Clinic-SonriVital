@@ -652,6 +652,7 @@ body {
     .tip-card {
         min-width: 260px;
         padding: 1.5rem;
+        box-sizing: content-box;
     }
 
     .section-header h2 {
@@ -702,7 +703,7 @@ body {
     }
 
     .tips-container {
-        padding: 0 2rem;
+        padding: 0;
     }
 
     .carousel-button {
