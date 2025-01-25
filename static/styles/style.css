@@ -53,8 +53,14 @@ body {
     transition: all 0.3s ease;
 }
 
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
 .logo {
-    height: 50px;
+    height: 80px;
+    margin-right: .5rem;
 }
 
 .nav-links {
