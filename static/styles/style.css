@@ -11,6 +11,7 @@
     --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
     --border-radius: 1rem;
+    --text-font: 'Montserrat',sans-serif;
 }
 
 * {
@@ -25,7 +26,7 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--text-font);
     line-height: 1.6;
     color: var(--text-dark);
     overflow-x: hidden;
