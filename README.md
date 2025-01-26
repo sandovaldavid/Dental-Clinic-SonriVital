@@ -1,4 +1,6 @@
-# SonriVital - Clínica Dental Website
+# <img src="static/images/logo/logo.png" alt="SonriVital Logo" width="30px" style="background: #fff"/> SonriVital - Clínica Dental Website
+
+![SonriVital Logo](static/images/sonri-vital-project.webp)
 
 ## Descripción del Proyecto
 
